@@ -21,7 +21,7 @@
 			<i class="fas fa-phone-alt"></i> {% if artist.phone %}{{ artist.phone }}{% else %}No Phone{% endif %}
         </p>
         <p>
-			<i class="fas fa-link"></i> {% if artist.website %}<a href="{{ artist.website }}" target="_blank">{{ artist.website }}</a>{% else %}No Website{% endif %}
+			<i class="fas fa-link"></i> {% if artist.website_link %}<a href="{{ artist.website_link }}" target="_blank">{{ artist.website_link }}</a>{% else %}No Website{% endif %}
 		</p>
 		<p>
 			<i class="fab fa-facebook-f"></i> {% if artist.facebook_link %}<a href="{{ artist.facebook_link }}" target="_blank">{{ artist.facebook_link }}</a>{% else %}No Facebook Link{% endif %}
@@ -63,7 +63,7 @@
 		{%for show in artist.past_shows %}
 		<div class="col-sm-4">
 			<div class="tile tile-show">
-				<img src="{{ show.venue_image_link }}" alt="Show Venue Image" />
+				<img src="{{ show.venue_image_link }}" alt="{{ show.venue_name }}" />
 				<h5><a href="/venues/{{ show.venue_id }}">{{ show.venue_name }}</a></h5>
 				<h6>{{ show.start_time|datetime('full') }}</h6>
 			</div>
